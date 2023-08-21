@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - MovieListEntity
+
 struct MovieListEntity: Codable {
     let search: [Search]?
     let totalResults, response: String?

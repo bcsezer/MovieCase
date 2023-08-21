@@ -11,6 +11,7 @@ import UIKit
 protocol MovieListBusinessLogic {
     func handle(request: MovieList.Search.Request)
     func handle(request: MovieList.CheckFavorites.Request)
+    func handle(request: MovieList.TapMovie.Request)
 }
 
 class MovieListInteractor: MovieListBusinessLogic {
@@ -28,6 +29,10 @@ class MovieListInteractor: MovieListBusinessLogic {
     
     func handle(request: MovieList.CheckFavorites.Request) {
         
+    }
+    
+    func handle(request: MovieList.TapMovie.Request) {
+        presenter?.present(response: MovieList.TapMovie.Response(selectedId: request.selectedId))
     }
     
     private func removeBlanks(text: String) -> String {

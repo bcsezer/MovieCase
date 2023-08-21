@@ -39,7 +39,7 @@ class ViewControllerFactory {
         return viewController
     }
 
-    func makeMovieDetail() -> UIViewController {
+    func makeMovieDetail(selectedId: String?) -> UIViewController {
         let viewController = MovieDetailViewController(nibName: "MovieDetailView", bundle: nil)
         let interactor = MovieDetailInteractor()
         let presenter = MovieDetailPresenter()
@@ -47,6 +47,7 @@ class ViewControllerFactory {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.selectedMovieId = selectedId
         presenter.viewController = viewController
         router.viewController = viewController
         return viewController

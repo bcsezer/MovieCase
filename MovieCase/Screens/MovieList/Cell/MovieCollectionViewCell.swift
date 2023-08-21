@@ -20,15 +20,28 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var containerView: UIView!
     
     weak var delegate: MovieCellDelegate?
+    private var selectedId: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         apperance()
+        addGesture()
     }
     
-    func willDisplay(poster: String, title: String) {
+    func willDisplay(poster: String, title: String, id: String?) {
         self.moviePoster.setImage(imgUrl: poster)
         self.movieTitle.text = title
+        self.selectedId = id
+    }
+    
+    private func addGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapImage))
+        moviePoster.addGestureRecognizer(gesture)
+    }
+    
+    @objc func tapImage() {
+        guard let selectedId = selectedId else { return }
+        delegate?.didTapMovie(id: selectedId)
     }
     
     private func apperance() {

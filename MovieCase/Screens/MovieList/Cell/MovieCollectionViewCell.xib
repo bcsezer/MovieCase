@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqd-gf-QMs">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="116"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MCU-Gz-wOw">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MCU-Gz-wOw">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MCU-Gz-wOw" secondAttribute="height" multiplier="20:29" id="nRZ-7H-usR"/>

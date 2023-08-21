@@ -9,15 +9,21 @@
 import UIKit
 
 protocol MovieListRoutingLogic {
-    func routeToSomeWhere()
+    func routeToFavorites()
+    func routeToDetail(selectedId: String)
 }
 
 class MovieListRouter: NSObject, MovieListRoutingLogic {
     weak var viewController: MovieListViewController?
-
+    
     // MARK: Routing Logic
     
-    func routeToSomeWhere() {
+    func routeToFavorites() {
         
+    }
+    
+    func routeToDetail(selectedId: String) {
+        let detailVC = ViewControllerFactory.sharedInstance.makeMovieDetail(selectedId: selectedId)
+        viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

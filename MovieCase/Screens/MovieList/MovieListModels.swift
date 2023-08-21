@@ -37,16 +37,19 @@ enum MovieList {
     
     enum TapMovie {
         struct Request {
+            let selectedId: String
         }
         struct Response {
+            let selectedId: String
         }
         struct ViewModel {
+            let selectedId: String
         }
     }
     
     enum Cell {
         case initalCell
-        case movieList(image: String, title: String)
+        case movieList(image: String, title: String, id: String?)
         case emptyResult
         
         func identifier() -> String {

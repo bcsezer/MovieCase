@@ -11,6 +11,7 @@ import UIKit
 protocol MovieListDisplayLogic: AnyObject {
     func display(viewModel: MovieList.Search.ViewModel)
     func display(viewModel: MovieList.CheckFavorites.ViewModel)
+    func display(viewModel: MovieList.TapMovie.ViewModel)
 }
 
 class MovieListViewController: UIViewController, MovieListDisplayLogic {
@@ -19,7 +20,12 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var favoritesButton: UIButton!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            self.searchBar.backgroundImage = UIImage()
+            self.searchBar.delegate = self
+        }
+    }
     
     private var rows: [MovieList.Cell] = [.initalCell]
     
@@ -38,7 +44,6 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
         registerCells()
         collectionView.delegate = self
         collectionView.dataSource = self
-        searchBar.delegate = self
         interactor?.handle(request: MovieList.CheckFavorites.Request())
     }
     
@@ -58,6 +63,10 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     func display(viewModel: MovieList.CheckFavorites.ViewModel) {
         collectionView.reloadData()
         favoritesButton.setImage(viewModel.buttonIcon, for: .normal)
+    }
+    
+    func display(viewModel: MovieList.TapMovie.ViewModel) {
+        router?.routeToDetail(selectedId: viewModel.selectedId)
     }
     
     @IBAction func tapFavorites(_ sender: Any) {
@@ -89,12 +98,13 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
         
         switch row {
         case .emptyResult:
-            print("iyidir")
+            break
         case .initalCell:
-            print("NAber")
-        case .movieList(let image, let title):
+            break
+        case .movieList(let image, let title, let id):
             guard let cell = cell as? MovieCollectionViewCell else { return }
-            cell.willDisplay(poster: image, title: title)
+            cell.willDisplay(poster: image, title: title, id: id)
+            cell.delegate = self
         }
     }
     
@@ -138,5 +148,11 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
         minimumInteritemSpacingForSectionAt section: Int
     ) -> CGFloat {
         return Constant.minimumInteritemSpacingForSectionAt
+    }
+}
+
+extension MovieListViewController: MovieCellDelegate {
+    func didTapMovie(id: String) {
+        interactor?.handle(request: MovieList.TapMovie.Request(selectedId: id))
     }
 }

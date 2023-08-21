@@ -12,6 +12,7 @@ import Kingfisher
 protocol MovieListPresentationLogic {
     func present(response: MovieList.Search.Response)
     func present(response: MovieList.CheckFavorites.Response)
+    func present(response: MovieList.TapMovie.Response)
 }
 
 class MovieListPresenter: MovieListPresentationLogic {
@@ -27,7 +28,8 @@ class MovieListPresenter: MovieListPresentationLogic {
                 cell.append(
                     .movieList(
                         image: Movie.poster ?? "",
-                        title: Movie.title ?? ""
+                        title: Movie.title ?? "",
+                        id: Movie.imdbID ?? nil
                     )
                 )
             }
@@ -44,5 +46,9 @@ class MovieListPresenter: MovieListPresentationLogic {
                 buttonIcon: UIImage(systemName: "star")
             )
         )
+    }
+    
+    func present(response: MovieList.TapMovie.Response) {
+        viewController?.display(viewModel: MovieList.TapMovie.ViewModel(selectedId: response.selectedId))
     }
 }

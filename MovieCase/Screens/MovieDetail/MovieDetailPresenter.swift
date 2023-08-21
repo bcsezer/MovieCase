@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MovieDetailPresentationLogic {
-    func present(response: MovieDetail.Something.Response)
+    func present(response: MovieDetail.GetDetail.Response)
 }
 
 class MovieDetailPresenter: MovieDetailPresentationLogic {
@@ -17,8 +17,26 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
 
     // MARK: Presentation Logic
     
-    func present(response: MovieDetail.Something.Response) {
-        let viewModel = MovieDetail.Something.ViewModel()
-        viewController?.display(viewModel: viewModel)
+    func present(response: MovieDetail.GetDetail.Response) {
+        viewController?.display(
+            viewModel: MovieDetail.GetDetail.ViewModel(
+                detail: MovieDetail.MovieDetailModel(
+                    title: response.data.title ?? "-",
+                    image: response.data.poster ?? "-",
+                    releasedDate: response.data.released ?? "-",
+                    runtime: response.data.runtime ?? "-",
+                    genre: response.data.genre ?? "-",
+                    director: response.data.director ?? "-",
+                    writer: response.data.writer ?? "-",
+                    actors: response.data.actors ?? "-",
+                    country: response.data.country ?? "-",
+                    awards: response.data.awards ?? "-",
+                    metaScore: response.data.metascore ?? "-",
+                    rating: response.data.imdbRating ?? "-",
+                    votes: response.data.imdbVotes ?? "-",
+                    hasImg: response.data.poster != "N/A"
+                )
+            )
+        )
     }
 }

@@ -20,4 +20,13 @@ struct NetworkManager {
             failure: failure
         )
     }
+    
+    func getDetail(selectedId: String, completion: @escaping ClosureType<MovieDetailEntity>, failure: @escaping Failure) {
+        provider.request(
+            .getMovieDetail(id: selectedId),
+            model: MovieDetailEntity.self,
+            completion: completion,
+            failure: failure
+        )
+    }
 }

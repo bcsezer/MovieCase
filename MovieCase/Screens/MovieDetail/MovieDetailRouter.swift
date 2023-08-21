@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MovieDetailRoutingLogic {
-    func routeToSomeWhere()
+    func routeToBack()
 }
 
 class MovieDetailRouter: NSObject, MovieDetailRoutingLogic {
@@ -17,7 +17,7 @@ class MovieDetailRouter: NSObject, MovieDetailRoutingLogic {
 
     // MARK: Routing Logic
     
-    func routeToSomeWhere() {
-        
+    func routeToBack() {
+        viewController?.navigationController?.popViewController(animated: true)
     }
 }
