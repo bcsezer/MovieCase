@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WelcomeCell" customModule="MovieCase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="213" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="213" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arama kısmına istediğin filmin adını yazıp sonuçları listeleyebilirsin." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa1-fG-NBA">
+                        <rect key="frame" x="0.0" y="0.0" width="213" height="160"/>
+                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                        <color key="textColor" red="0.35294117650000001" green="0.68235294120000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Sa1-fG-NBA" secondAttribute="trailing" id="3J1-3e-qoh"/>
+                <constraint firstItem="Sa1-fG-NBA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zgn-cD-bSG"/>
+                <constraint firstItem="Sa1-fG-NBA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="d3J-pr-wC6"/>
+                <constraint firstAttribute="bottom" secondItem="Sa1-fG-NBA" secondAttribute="bottom" constant="20" id="ow0-Yr-Iga"/>
+            </constraints>
+            <size key="customSize" width="213" height="180"/>
+            <point key="canvasLocation" x="164.12213740458014" y="65.492957746478879"/>
+        </collectionViewCell>
+    </objects>
+</document>
