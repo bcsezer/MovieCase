@@ -43,7 +43,7 @@ class MovieListPresenter: MovieListPresentationLogic {
     func present(response: MovieList.CheckFavorites.Response) {
         viewController?.display(
             viewModel: MovieList.CheckFavorites.ViewModel(
-                buttonIcon: UIImage(systemName: "star")
+                favButtonActive: response.hasFavorites
             )
         )
     }

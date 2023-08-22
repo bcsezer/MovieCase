@@ -19,7 +19,8 @@ class MovieListRouter: NSObject, MovieListRoutingLogic {
     // MARK: Routing Logic
     
     func routeToFavorites() {
-        
+        let favVC = ViewControllerFactory.sharedInstance.makeFavoriteMovies()
+        viewController?.navigationController?.pushViewController(favVC, animated: true)
     }
     
     func routeToDetail(selectedId: String) {

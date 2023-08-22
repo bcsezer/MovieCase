@@ -44,6 +44,11 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
         registerCells()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         interactor?.handle(request: MovieList.CheckFavorites.Request())
     }
     
@@ -61,8 +66,7 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     }
     
     func display(viewModel: MovieList.CheckFavorites.ViewModel) {
-        collectionView.reloadData()
-        favoritesButton.setImage(viewModel.buttonIcon, for: .normal)
+        favoritesButton.isHidden = !viewModel.favButtonActive
     }
     
     func display(viewModel: MovieList.TapMovie.ViewModel) {
@@ -70,7 +74,7 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     }
     
     @IBAction func tapFavorites(_ sender: Any) {
-        
+        router?.routeToFavorites()
     }
 }
 

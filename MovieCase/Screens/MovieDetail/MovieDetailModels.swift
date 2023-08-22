@@ -25,6 +25,7 @@ enum MovieDetail {
         let rating: String
         let votes: String
         let hasImg: Bool
+        let hasFav: UIImage
     }
     
     // MARK: Use cases
@@ -33,9 +34,32 @@ enum MovieDetail {
         }
         struct Response {
             let data: MovieDetailEntity
+            let hasFav: Bool
         }
         struct ViewModel {
             let detail: MovieDetailModel
+        }
+    }
+    
+    enum Error {
+        struct Response {
+            let text: String
+        }
+        struct ViewModel {
+            let text: String
+        }
+    }
+    
+    enum TapFavorites {
+        struct Request {
+        }
+        struct Response {
+            let text: String
+            let hasFav: Bool
+        }
+        struct ViewModel {
+            let text: String
+            let hasFav: UIImage
         }
     }
 }

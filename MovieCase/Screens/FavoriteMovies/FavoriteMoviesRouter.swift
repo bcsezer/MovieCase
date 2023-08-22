@@ -9,7 +9,8 @@
 import UIKit
 
 protocol FavoriteMoviesRoutingLogic {
-    func routeToSomeWhere()
+    func routeToDetail(id: String)
+    func routeToBack()
 }
 
 class FavoriteMoviesRouter: NSObject, FavoriteMoviesRoutingLogic {
@@ -17,7 +18,12 @@ class FavoriteMoviesRouter: NSObject, FavoriteMoviesRoutingLogic {
 
     // MARK: Routing Logic
     
-    func routeToSomeWhere() {
-        
+    func routeToBack() {
+        viewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func routeToDetail(id: String) {
+        let detailVC = ViewControllerFactory.sharedInstance.makeMovieDetail(selectedId: id)
+        viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

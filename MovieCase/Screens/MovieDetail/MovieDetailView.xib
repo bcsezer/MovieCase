@@ -14,6 +14,7 @@
                 <outlet property="awards" destination="2ky-EH-lfo" id="NEz-sp-0eH"/>
                 <outlet property="country" destination="AIz-tU-X4K" id="6Kv-hH-qFp"/>
                 <outlet property="director" destination="n8B-Xq-XQG" id="BfI-7B-PrK"/>
+                <outlet property="favoritesButton" destination="ilw-D8-wV6" id="FBq-SQ-Kif"/>
                 <outlet property="genre" destination="ela-kx-Yci" id="4Md-ai-Bki"/>
                 <outlet property="imdbRate" destination="268-LE-44O" id="Zaf-xU-F3b"/>
                 <outlet property="imdbVot" destination="wq7-gu-wE7" id="lgj-es-l1U"/>
@@ -48,6 +49,15 @@
                                 <action selector="tapBack:" destination="-1" eventType="touchUpInside" id="JTC-Pn-BYK"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilw-D8-wV6">
+                            <rect key="frame" x="362" y="0.0" width="52" height="44"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                            <connections>
+                                <action selector="tapFavorites:" destination="-1" eventType="touchUpInside" id="eJ4-x7-04O"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.35294117650000001" green="0.68235294120000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
@@ -56,7 +66,10 @@
                         <constraint firstItem="CrZ-Sx-cZd" firstAttribute="centerX" secondItem="7ct-Mv-rOh" secondAttribute="centerX" id="Qnp-Yw-xpi"/>
                         <constraint firstItem="CrZ-Sx-cZd" firstAttribute="centerY" secondItem="7ct-Mv-rOh" secondAttribute="centerY" id="Xb6-ts-4aZ"/>
                         <constraint firstItem="Vx8-5M-NTH" firstAttribute="top" secondItem="7ct-Mv-rOh" secondAttribute="top" id="ZP8-64-dKm"/>
+                        <constraint firstItem="ilw-D8-wV6" firstAttribute="top" secondItem="7ct-Mv-rOh" secondAttribute="top" id="b2G-5r-0Pq"/>
+                        <constraint firstAttribute="trailing" secondItem="ilw-D8-wV6" secondAttribute="trailing" id="gFW-wc-F4h"/>
                         <constraint firstAttribute="bottom" secondItem="Vx8-5M-NTH" secondAttribute="bottom" id="o3M-P6-onz"/>
+                        <constraint firstAttribute="bottom" secondItem="ilw-D8-wV6" secondAttribute="bottom" id="ywT-b3-IuY"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ped-KC-5kZ" userLabel="upperView">
@@ -527,6 +540,7 @@
     </objects>
     <resources>
         <image name="backButton" width="12" height="21"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,6 +11,8 @@ import Kingfisher
 
 protocol MovieDetailDisplayLogic: AnyObject {
     func display(viewModel: MovieDetail.GetDetail.ViewModel)
+    func display(viewModel: MovieDetail.TapFavorites.ViewModel)
+    func display(viewModel: MovieDetail.Error.ViewModel)
 }
 
 class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
@@ -31,7 +33,8 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     @IBOutlet private weak var metaScore: UILabel!
     @IBOutlet private weak var imdbRate: UILabel!
     @IBOutlet private weak var imdbVot: UILabel!
-
+    @IBOutlet private weak var favoritesButton: UIButton!
+    
     // MARK: View lifecycle
 
     override func viewDidLoad() {
@@ -43,7 +46,20 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
         router?.routeToBack()
     }
     
+    @IBAction func tapFavorites(_ sender: Any) {
+        interactor?.handle(request: MovieDetail.TapFavorites.Request())
+    }
+    
     // MARK: Requests
+    
+    func display(viewModel: MovieDetail.TapFavorites.ViewModel) {
+        favoritesButton.setImage(viewModel.hasFav, for: .normal)
+        self.showAlert(withMessage: viewModel.text)
+    }
+    
+    func display(viewModel: MovieDetail.Error.ViewModel) {
+        self.showAlert(withTitle: "Hata", withMessage: viewModel.text)
+    }
 
     func display(viewModel: MovieDetail.GetDetail.ViewModel) {
         poster.isHidden = !viewModel.detail.hasImg
@@ -60,5 +76,6 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
         metaScore.text = viewModel.detail.metaScore
         imdbRate.text = viewModel.detail.rating
         imdbVot.text = viewModel.detail.votes
+        favoritesButton.setImage(viewModel.detail.hasFav, for: .normal)
     }
 }

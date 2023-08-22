@@ -31,7 +31,7 @@ enum MovieList {
             let hasFavorites: Bool
         }
         struct ViewModel {
-            let buttonIcon: UIImage?
+            let favButtonActive: Bool
         }
     }
     

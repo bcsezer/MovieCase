@@ -11,12 +11,39 @@ import UIKit
 enum FavoriteMovies {
     
     // MARK: Use cases
-    enum Something {
+    enum GetData {
         struct Request {
         }
         struct Response {
+            let movies: [MovieDetailEntity]
         }
         struct ViewModel {
+            let cells: [FavoriteMovies.Rows]
+        }
+    }
+    
+    enum TapRemove {
+        struct Request {
+            let index: Int
+            let id: String
+        }
+        struct Response {
+            let index: Int
+            let basket: [MovieDetailEntity]
+        }
+        struct ViewModel {
+            let indexPath: IndexPath
+        }
+    }
+    
+    enum Rows {
+        case favoritesCell(poster: String, id: String, title: String)
+        
+        func identifier() -> String {
+            switch self {
+            case .favoritesCell:
+                return FavoritesCell.identifier
+            }
         }
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 struct Keys {
-    static let key = "AddToBasket"
+    static let key = "AddToFavorites"
 }

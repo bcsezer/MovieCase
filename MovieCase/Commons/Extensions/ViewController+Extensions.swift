@@ -8,15 +8,8 @@
 import UIKit
 
 extension UIViewController {
-    static func loadFromNib() -> Self {
-        func instanceFromNib<T: UIViewController>() -> T {
-            return T(nibName: String(describing: self), bundle: nil)
-        }
-        return instanceFromNib()
-    }
     
-    
-    func showAlert(withTitle title: String, withMessage message:String) {
+    func showAlert(withTitle title: String? = "", withMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Tamam", style: .default, handler: { action in })
         alert.addAction(ok)

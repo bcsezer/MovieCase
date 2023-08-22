@@ -28,7 +28,11 @@ class MovieListInteractor: MovieListBusinessLogic {
     }
     
     func handle(request: MovieList.CheckFavorites.Request) {
-        
+        presenter?.present(
+            response: MovieList.CheckFavorites.Response(
+                hasFavorites: !(FavoritesRepository.shared.getMovies()?.isEmpty ?? false)
+            )
+        )
     }
     
     func handle(request: MovieList.TapMovie.Request) {

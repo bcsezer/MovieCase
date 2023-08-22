@@ -9,7 +9,8 @@
 import UIKit
 
 protocol FavoriteMoviesBusinessLogic {
-    func handle(request: FavoriteMovies.Something.Request)
+    func handle(request: FavoriteMovies.GetData.Request)
+    func handle(request: FavoriteMovies.TapRemove.Request)
 }
 
 class FavoriteMoviesInteractor: FavoriteMoviesBusinessLogic {
@@ -17,8 +18,14 @@ class FavoriteMoviesInteractor: FavoriteMoviesBusinessLogic {
     
     // MARK: Business Logic
 
-    func handle(request: FavoriteMovies.Something.Request) {
-        let response = FavoriteMovies.Something.Response()
-        presenter?.present(response: response)
+    func handle(request: FavoriteMovies.GetData.Request) {
+        guard let movies = FavoritesRepository.shared.getMovies() else { return }
+        presenter?.present(response: FavoriteMovies.GetData.Response(movies: movies))
+    }
+    
+    func handle(request: FavoriteMovies.TapRemove.Request) {
+        FavoritesRepository.shared.delete(id: request.id)
+        let movies = FavoritesRepository.shared.getMovies() ?? []
+        presenter?.present(response: FavoriteMovies.TapRemove.Response(index: request.index, basket: movies))
     }
 }

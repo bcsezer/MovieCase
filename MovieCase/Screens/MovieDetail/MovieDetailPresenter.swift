@@ -10,6 +10,8 @@ import UIKit
 
 protocol MovieDetailPresentationLogic {
     func present(response: MovieDetail.GetDetail.Response)
+    func present(response: MovieDetail.TapFavorites.Response)
+    func present(response: MovieDetail.Error.Response)
 }
 
 class MovieDetailPresenter: MovieDetailPresentationLogic {
@@ -18,6 +20,7 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
     // MARK: Presentation Logic
     
     func present(response: MovieDetail.GetDetail.Response) {
+        
         viewController?.display(
             viewModel: MovieDetail.GetDetail.ViewModel(
                 detail: MovieDetail.MovieDetailModel(
@@ -34,8 +37,22 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
                     metaScore: response.data.metascore ?? "-",
                     rating: response.data.imdbRating ?? "-",
                     votes: response.data.imdbVotes ?? "-",
-                    hasImg: response.data.poster != "N/A"
+                    hasImg: response.data.poster != "N/A",
+                    hasFav: response.hasFav ? UIImage(systemName: "star.fill") ?? UIImage() : UIImage(systemName: "star") ?? UIImage()
                 )
+            )
+        )
+    }
+    
+    func present(response: MovieDetail.Error.Response) {
+        
+    }
+    
+    func present(response: MovieDetail.TapFavorites.Response) {
+        viewController?.display(
+            viewModel: MovieDetail.TapFavorites.ViewModel(
+                text: response.text,
+                hasFav: response.hasFav ? UIImage(systemName: "star.fill") ?? UIImage() : UIImage(systemName: "star") ?? UIImage()
             )
         )
     }
