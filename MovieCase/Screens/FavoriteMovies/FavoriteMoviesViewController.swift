@@ -22,7 +22,7 @@ class FavoriteMoviesViewController: UIViewController, FavoriteMoviesDisplayLogic
     // MARK: View lifecycle
 
     private struct Constant {
-        static let heightForRow: CGFloat = 104.0
+        static let heightForRow: CGFloat = 150.0
         static let emptyCellHeight: CGFloat = 200.0
     }
     

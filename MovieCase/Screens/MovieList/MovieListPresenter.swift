@@ -28,7 +28,6 @@ class MovieListPresenter: MovieListPresentationLogic {
                 cell.append(
                     .movieList(
                         image: Movie.poster ?? "",
-                        title: Movie.title ?? "",
                         id: Movie.imdbID ?? nil
                     )
                 )

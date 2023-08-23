@@ -31,7 +31,7 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     
     private struct Constant {
         static let extraSpacesForCell: CGFloat = 24.0
-        static let cellHeight: CGFloat = 116.0
+        static let cellHeight: CGFloat = 300.0
         static let cellEdges: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         static let minimumLineSpacingForSection: CGFloat = 8.0
         static let minimumInteritemSpacingForSectionAt: CGFloat = 1.0
@@ -105,9 +105,9 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
             break
         case .initalCell:
             break
-        case .movieList(let image, let title, let id):
+        case .movieList(let image, let id):
             guard let cell = cell as? MovieCollectionViewCell else { return }
-            cell.willDisplay(poster: image, title: title, id: id)
+            cell.willDisplay(poster: image, id: id)
             cell.delegate = self
         }
     }

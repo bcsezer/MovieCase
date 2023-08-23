@@ -20,7 +20,11 @@ class MovieListInteractor: MovieListBusinessLogic {
     // MARK: Business Logic
 
     func handle(request: MovieList.Search.Request) {
-        NetworkManager.shared.getList(searchText: removeBlanks(text: request.searchText)) { result in
+        guard
+            let searchText = request.searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        else { return }
+        
+        NetworkManager.shared.getList(searchText: removeBlanks(text: searchText)) { result in
             self.presenter?.present(response: MovieList.Search.Response(data: result))
         } failure: { error in
             print(error)

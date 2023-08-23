@@ -44,10 +44,7 @@ class FavoritesCell: UITableViewCell {
                 backgroundColor: .white,
                 layerStyle: ViewStyle.LayerStyle(
                     masksToBounds: true, cornerRadius: 4,
-                    borderStyle: ViewStyle.LayerStyle.BorderStyle(
-                        color: Colors.loodos_blue,
-                        width: 1
-                    )
+                    borderStyle: nil
                 )
             )
         )

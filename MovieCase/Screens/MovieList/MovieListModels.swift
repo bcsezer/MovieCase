@@ -49,7 +49,7 @@ enum MovieList {
     
     enum Cell {
         case initalCell
-        case movieList(image: String, title: String, id: String?)
+        case movieList(image: String, id: String?)
         case emptyResult
         
         func identifier() -> String {

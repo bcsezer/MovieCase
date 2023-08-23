@@ -16,7 +16,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
     static let identifier = "MovieCollectionViewCell"
     
     @IBOutlet private weak var moviePoster: UIImageView!
-    @IBOutlet private weak var movieTitle: UILabel!
     @IBOutlet private weak var containerView: UIView!
     
     weak var delegate: MovieCellDelegate?
@@ -28,9 +27,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         addGesture()
     }
     
-    func willDisplay(poster: String, title: String, id: String?) {
+    func willDisplay(poster: String, id: String?) {
         self.moviePoster.setImage(imgUrl: poster)
-        self.movieTitle.text = title
         self.selectedId = id
     }
     
@@ -49,11 +47,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
             style: ViewStyle(
                 backgroundColor: .white,
                 layerStyle: ViewStyle.LayerStyle(
-                    masksToBounds: true, cornerRadius: 4,
-                    borderStyle: ViewStyle.LayerStyle.BorderStyle(
-                        color: Colors.loodos_blue,
-                        width: 1
-                    )
+                    masksToBounds: true, cornerRadius: 6,
+                    borderStyle: nil
                 )
             )
         )

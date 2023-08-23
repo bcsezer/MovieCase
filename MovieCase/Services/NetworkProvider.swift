@@ -40,6 +40,7 @@ class NetworkProvider<EndPoint: EndpointType>: NetworkRouter {
     fileprivate func buildRequest(from target: EndPoint) throws -> URLRequest {
         let url = URL(string: target.baseURL.absoluteString.appending(target.path))
         
+        print("URL Request:\(url?.absoluteString)")
         var request = URLRequest(url: url ?? target.baseURL,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                  timeoutInterval: 20.0)

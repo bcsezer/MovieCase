@@ -22,26 +22,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MCU-Gz-wOw">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="116"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="MCU-Gz-wOw" secondAttribute="height" multiplier="20:29" id="nRZ-7H-usR"/>
-                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHZ-Y3-gZQ">
-                                <rect key="frame" x="8" y="89" width="64" height="19"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.29063031462585032" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tHZ-Y3-gZQ" secondAttribute="bottom" constant="8" id="Cgr-aD-gm7"/>
-                            <constraint firstAttribute="trailing" secondItem="tHZ-Y3-gZQ" secondAttribute="trailing" constant="8" id="Cl3-2G-7TP"/>
+                            <constraint firstItem="MCU-Gz-wOw" firstAttribute="centerY" secondItem="dqd-gf-QMs" secondAttribute="centerY" id="2bu-wr-tdw"/>
                             <constraint firstItem="MCU-Gz-wOw" firstAttribute="leading" secondItem="dqd-gf-QMs" secondAttribute="leading" id="FUc-I3-HZB"/>
                             <constraint firstItem="MCU-Gz-wOw" firstAttribute="top" secondItem="dqd-gf-QMs" secondAttribute="top" id="Fty-mF-evU"/>
                             <constraint firstAttribute="trailing" secondItem="MCU-Gz-wOw" secondAttribute="trailing" id="MqU-w6-sj5"/>
-                            <constraint firstItem="tHZ-Y3-gZQ" firstAttribute="leading" secondItem="dqd-gf-QMs" secondAttribute="leading" constant="8" id="f6O-XM-6pz"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -57,7 +45,6 @@
             <connections>
                 <outlet property="containerView" destination="dqd-gf-QMs" id="g9J-RX-GxX"/>
                 <outlet property="moviePoster" destination="MCU-Gz-wOw" id="1Gw-cp-fkc"/>
-                <outlet property="movieTitle" destination="tHZ-Y3-gZQ" id="SJs-6c-8xl"/>
             </connections>
             <point key="canvasLocation" x="116.8" y="42.278860569715143"/>
         </collectionViewCell>
