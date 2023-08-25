@@ -11,12 +11,24 @@ import UIKit
 enum SplashScreen {
     
     // MARK: Use cases
-    enum Something {
+    enum GetData {
         struct Request {
         }
         struct Response {
+            let text: String
         }
         struct ViewModel {
+            let text: String
+        }
+    }
+    
+    enum Error {
+        struct Response {
+        }
+        struct ViewModel {
+            let text: String
+            let title: String
+            let buttonTitle: String
         }
     }
 }

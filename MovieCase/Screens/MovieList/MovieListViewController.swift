@@ -28,6 +28,7 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     }
     
     private var rows: [MovieList.Cell] = [.initalCell]
+    private var actIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     private struct Constant {
         static let extraSpacesForCell: CGFloat = 24.0
@@ -45,6 +46,7 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
+        ActivityManager.configureActivity(activityIndicator: actIndicator, view: self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +65,8 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
     func display(viewModel: MovieList.Search.ViewModel) {
         self.rows = viewModel.cell
         collectionView.reloadData()
+        actIndicator.stopAnimating()
+        view.endEditing(true)
     }
     
     func display(viewModel: MovieList.CheckFavorites.ViewModel) {
@@ -81,6 +85,7 @@ class MovieListViewController: UIViewController, MovieListDisplayLogic {
 extension MovieListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
+        actIndicator.startAnimating()
         interactor?.handle(request: MovieList.Search.Request(searchText: text))
     }
 }
@@ -110,6 +115,10 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
             cell.willDisplay(poster: image, id: id)
             cell.delegate = self
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.view.endEditing(true)
     }
     
     func collectionView(

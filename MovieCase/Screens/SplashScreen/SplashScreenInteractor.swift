@@ -9,16 +9,21 @@
 import UIKit
 
 protocol SplashScreenBusinessLogic {
-    func handle(request: SplashScreen.Something.Request)
+    func handle(request: SplashScreen.GetData.Request)
 }
 
 class SplashScreenInteractor: SplashScreenBusinessLogic {
     var presenter: SplashScreenPresentationLogic?
     
     // MARK: Business Logic
-
-    func handle(request: SplashScreen.Something.Request) {
-        let response = SplashScreen.Something.Response()
-        presenter?.present(response: response)
+    
+    func handle(request: SplashScreen.GetData.Request) {
+        if NetworkMonitor.shared.isConnected {
+            let text = RemoteConfigManager.value(for: RemoteConfigKey.splashLabel)
+            let response = SplashScreen.GetData.Response(text: text ?? "")
+            presenter?.present(response: response)
+        } else {
+            presenter?.present(response: SplashScreen.Error.Response())
+        }
     }
 }

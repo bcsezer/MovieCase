@@ -57,7 +57,7 @@
 		74B98E552A90EDA4001FAE2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74B98E542A90EDA4001FAE2D /* GoogleService-Info.plist */; };
 		74B98E7C2A90F173001FAE2D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E7B2A90F173001FAE2D /* ViewControllerFactory.swift */; };
 		74B98E7E2A90F197001FAE2D /* CollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E7D2A90F197001FAE2D /* CollectionViewCell+Extensions.swift */; };
-		74B98E802A90F1BA001FAE2D /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E7F2A90F1BA001FAE2D /* ViewController+Extensions.swift */; };
+		74B98E802A90F1BA001FAE2D /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E7F2A90F1BA001FAE2D /* AlertManager.swift */; };
 		74B98E822A90F209001FAE2D /* TableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E812A90F209001FAE2D /* TableView+Extensions.swift */; };
 		74B98E842A90FA80001FAE2D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E832A90FA80001FAE2D /* Color+Extensions.swift */; };
 		74B98E862A90FAEE001FAE2D /* Integer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E852A90FAEE001FAE2D /* Integer+Extensions.swift */; };
@@ -70,6 +70,12 @@
 		74B98E942A90FBED001FAE2D /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E932A90FBED001FAE2D /* Images.swift */; };
 		74B98E962A90FC04001FAE2D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E952A90FC04001FAE2D /* Keys.swift */; };
 		74B98E982A90FC16001FAE2D /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B98E972A90FC16001FAE2D /* Urls.swift */; };
+		74F4424B2A96AF1B000C07C0 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F4424A2A96AF1B000C07C0 /* UIView+Extensions.swift */; };
+		74F4424E2A96B00A000C07C0 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74F4424D2A96B00A000C07C0 /* RemoteConfigDefaults.plist */; };
+		74F442502A96B03B000C07C0 /* RemoteConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F4424F2A96B03B000C07C0 /* RemoteConfigKey.swift */; };
+		74F442522A96B067000C07C0 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F442512A96B067000C07C0 /* RemoteConfigManager.swift */; };
+		74F442542A98A5D6000C07C0 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F442532A98A5D6000C07C0 /* ActivityIndicatorManager.swift */; };
+		74F442562A98A93C000C07C0 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F442552A98A93C000C07C0 /* UIApplication+Extensions.swift */; };
 		8339A2BAA6BF13F5D40D88F2 /* Pods_MovieCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C1520E96B86A0DFF2B938B /* Pods_MovieCase.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +134,7 @@
 		74B98E542A90EDA4001FAE2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74B98E7B2A90F173001FAE2D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		74B98E7D2A90F197001FAE2D /* CollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		74B98E7F2A90F1BA001FAE2D /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		74B98E7F2A90F1BA001FAE2D /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		74B98E812A90F209001FAE2D /* TableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extensions.swift"; sourceTree = "<group>"; };
 		74B98E832A90FA80001FAE2D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		74B98E852A90FAEE001FAE2D /* Integer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Integer+Extensions.swift"; sourceTree = "<group>"; };
@@ -141,6 +147,12 @@
 		74B98E932A90FBED001FAE2D /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		74B98E952A90FC04001FAE2D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		74B98E972A90FC16001FAE2D /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		74F4424A2A96AF1B000C07C0 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		74F4424D2A96B00A000C07C0 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		74F4424F2A96B03B000C07C0 /* RemoteConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigKey.swift; sourceTree = "<group>"; };
+		74F442512A96B067000C07C0 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		74F442532A98A5D6000C07C0 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		74F442552A98A93C000C07C0 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		7E9E4946137CBCD5C9BC2A00 /* Pods-MovieCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieCase.debug.xcconfig"; path = "Target Support Files/Pods-MovieCase/Pods-MovieCase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,12 +198,12 @@
 		74645EED2A90FF7500D6DE5D /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				74645F0B2A90FFCD00D6DE5D /* SplashScreenInteractor.swift */,
+				74645F092A90FFCD00D6DE5D /* SplashScreenModels.swift */,
 				74645F072A90FFCD00D6DE5D /* SplashScreenPresenter.swift */,
 				74645F082A90FFCD00D6DE5D /* SplashScreenRouter.swift */,
-				74645F092A90FFCD00D6DE5D /* SplashScreenModels.swift */,
-				74645F0A2A90FFCD00D6DE5D /* SplashScreenViewController.swift */,
-				74645F0B2A90FFCD00D6DE5D /* SplashScreenInteractor.swift */,
 				74645F0C2A90FFCD00D6DE5D /* SplashScreenView.xib */,
+				74645F0A2A90FFCD00D6DE5D /* SplashScreenViewController.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -226,8 +238,11 @@
 		74645F182A91051000D6DE5D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				74F4424C2A96AFF1000C07C0 /* RemoteConfig */,
 				74645F192A91051D00D6DE5D /* InternetManager.swift */,
 				749C1A642A92B2C8009B80EE /* NetworkManager.swift */,
+				74B98E7F2A90F1BA001FAE2D /* AlertManager.swift */,
+				74F442532A98A5D6000C07C0 /* ActivityIndicatorManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -237,13 +252,6 @@
 			children = (
 				747383642A953B16007C675C /* FavoritesCell.swift */,
 				747383652A953B16007C675C /* FavoritesCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		747383682A953D91007C675C /* Cells */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -327,7 +335,6 @@
 		74B98E562A90EF2A001FAE2D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				747383682A953D91007C675C /* Cells */,
 				74B98E682A90EFB6001FAE2D /* ViewControllerFactory */,
 				74B98E572A90EF33001FAE2D /* Extensions */,
 			);
@@ -338,13 +345,14 @@
 			isa = PBXGroup;
 			children = (
 				74B98E7D2A90F197001FAE2D /* CollectionViewCell+Extensions.swift */,
-				74B98E7F2A90F1BA001FAE2D /* ViewController+Extensions.swift */,
 				74B98E812A90F209001FAE2D /* TableView+Extensions.swift */,
 				74B98E832A90FA80001FAE2D /* Color+Extensions.swift */,
 				74B98E852A90FAEE001FAE2D /* Integer+Extensions.swift */,
 				74B98E872A90FB09001FAE2D /* String+Extensions.swift */,
 				74B98E892A90FB3B001FAE2D /* Userdefaults+Extensions.swift */,
 				74B98E8B2A90FB51001FAE2D /* ImageView+Extensions.swift */,
+				74F4424A2A96AF1B000C07C0 /* UIView+Extensions.swift */,
+				74F442552A98A93C000C07C0 /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,6 +403,16 @@
 				74B98E422A90EB2B001FAE2D /* SceneDelegate.swift */,
 			);
 			path = AppAndSceneDelegates;
+			sourceTree = "<group>";
+		};
+		74F4424C2A96AFF1000C07C0 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				74F4424D2A96B00A000C07C0 /* RemoteConfigDefaults.plist */,
+				74F4424F2A96B03B000C07C0 /* RemoteConfigKey.swift */,
+				74F442512A96B067000C07C0 /* RemoteConfigManager.swift */,
+			);
+			path = RemoteConfig;
 			sourceTree = "<group>";
 		};
 		78F7946DA269C1BE7F59C076 /* Pods */ = {
@@ -478,6 +496,7 @@
 				74645F242A92A21900D6DE5D /* WelcomeCell.xib in Resources */,
 				74645F062A90FFB600D6DE5D /* MovieDetailView.xib in Resources */,
 				74645EFA2A90FFA000D6DE5D /* FavoriteMoviesView.xib in Resources */,
+				74F4424E2A96B00A000C07C0 /* RemoteConfigDefaults.plist in Resources */,
 				74B98E4D2A90EB2C001FAE2D /* LaunchScreen.storyboard in Resources */,
 				74645F172A9102D600D6DE5D /* MovieCollectionViewCell.xib in Resources */,
 				74645F202A92A20A00D6DE5D /* EmptyResultCell.xib in Resources */,
@@ -538,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74645EF52A90FFA000D6DE5D /* FavoriteMoviesPresenter.swift in Sources */,
+				74F442522A96B067000C07C0 /* RemoteConfigManager.swift in Sources */,
 				74645F032A90FFB600D6DE5D /* MovieDetailModels.swift in Sources */,
 				74645F102A90FFCD00D6DE5D /* SplashScreenViewController.swift in Sources */,
 				74645F1A2A91051D00D6DE5D /* InternetManager.swift in Sources */,
@@ -545,18 +565,22 @@
 				74B98E902A90FBB5001FAE2D /* StylesHelper.swift in Sources */,
 				74645F052A90FFB600D6DE5D /* MovieDetailInteractor.swift in Sources */,
 				749C1A622A92B16F009B80EE /* FavoritesRepository.swift in Sources */,
+				74F442542A98A5D6000C07C0 /* ActivityIndicatorManager.swift in Sources */,
 				74B98E8A2A90FB3B001FAE2D /* Userdefaults+Extensions.swift in Sources */,
 				74645EF72A90FFA000D6DE5D /* FavoriteMoviesModels.swift in Sources */,
 				749C1A6D2A92B34D009B80EE /* EndpointType.swift in Sources */,
 				74645EF92A90FFA000D6DE5D /* FavoriteMoviesInteractor.swift in Sources */,
+				74F4424B2A96AF1B000C07C0 /* UIView+Extensions.swift in Sources */,
 				74B98E8E2A90FB96001FAE2D /* Styles.swift in Sources */,
+				74F442562A98A93C000C07C0 /* UIApplication+Extensions.swift in Sources */,
 				74B98E412A90EB2B001FAE2D /* AppDelegate.swift in Sources */,
 				74645EE52A90FDC700D6DE5D /* MovieListPresenter.swift in Sources */,
 				749C1A6A2A92B312009B80EE /* URLQueryEncoder.swift in Sources */,
 				74645EE82A90FDC700D6DE5D /* MovieListViewController.swift in Sources */,
+				74F442502A96B03B000C07C0 /* RemoteConfigKey.swift in Sources */,
 				74B98E862A90FAEE001FAE2D /* Integer+Extensions.swift in Sources */,
 				74B98E882A90FB09001FAE2D /* String+Extensions.swift in Sources */,
-				74B98E802A90F1BA001FAE2D /* ViewController+Extensions.swift in Sources */,
+				74B98E802A90F1BA001FAE2D /* AlertManager.swift in Sources */,
 				74645EE92A90FDC700D6DE5D /* MovieListInteractor.swift in Sources */,
 				74B98E982A90FC16001FAE2D /* Urls.swift in Sources */,
 				74645EE72A90FDC700D6DE5D /* MovieListModels.swift in Sources */,

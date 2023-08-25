@@ -6,26 +6,18 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDelegate {
 
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+        NetworkMonitor.shared.startMonitoring()
+        RemoteConfigManager.configure()
         let window = UIWindow(windowScene: windowScene)
-        let navigationController = UINavigationController(
-            rootViewController: ViewControllerFactory.sharedInstance.makeMovieList()
-        )
-        navigationController.isNavigationBarHidden = true
-        navigationController.interactivePopGestureRecognizer?.delegate = self
-        navigationController.interactivePopGestureRecognizer?.isEnabled = true
-        window.rootViewController = navigationController
-        
-        self.window = window
-        window.makeKeyAndVisible()
+        createRootController(window: window, controller: ViewControllerFactory.sharedInstance.makeSplashScreen())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -55,7 +47,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDele
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
+extension SceneDelegate {
+    private func createRootController(window: UIWindow, controller: UIViewController, time: TimeInterval = 0.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {
+            let navigationController = UINavigationController(
+                rootViewController: controller
+            )
+            navigationController.isNavigationBarHidden = true
+            navigationController.interactivePopGestureRecognizer?.delegate = self
+            navigationController.interactivePopGestureRecognizer?.isEnabled = true
+            window.rootViewController = navigationController
+            
+            self.window = window
+            window.makeKeyAndVisible()
+        })
+    }
+}

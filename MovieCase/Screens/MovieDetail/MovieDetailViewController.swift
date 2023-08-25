@@ -54,11 +54,11 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     
     func display(viewModel: MovieDetail.TapFavorites.ViewModel) {
         favoritesButton.setImage(viewModel.hasFav, for: .normal)
-        self.showAlert(withMessage: viewModel.text)
+        AlertManager().showAlert(view: self, withMessage: viewModel.text)
     }
     
     func display(viewModel: MovieDetail.Error.ViewModel) {
-        self.showAlert(withTitle: "Hata", withMessage: viewModel.text)
+        AlertManager().showAlert(view: self, withTitle: "Hata", withMessage: viewModel.text)
     }
 
     func display(viewModel: MovieDetail.GetDetail.ViewModel) {

@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenViewController" customModule="MovieCase" customModuleProvider="target">
             <connections>
+                <outlet property="loadingView" destination="YGX-ZA-waD" id="MTQ-gH-4jZ"/>
+                <outlet property="textLabel" destination="TIJ-46-ckC" id="RGe-VN-AYY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,8 +18,30 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIJ-46-ckC">
+                    <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="50"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGX-ZA-waD">
+                    <rect key="frame" x="172" y="313" width="70" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="eQY-nd-MDi"/>
+                        <constraint firstAttribute="width" constant="70" id="iRn-ia-ADc"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="8j8-uf-2JT"/>
-            <color key="backgroundColor" red="0.35294117650000001" green="0.68235294120000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="TIJ-46-ckC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="E8c-hU-uZ4"/>
+                <constraint firstItem="YGX-ZA-waD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JRA-yN-aV8"/>
+                <constraint firstItem="YGX-ZA-waD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="kYX-zs-KIj"/>
+                <constraint firstItem="TIJ-46-ckC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uhN-T8-Hzn"/>
+            </constraints>
             <point key="canvasLocation" x="-569" y="2"/>
         </view>
     </objects>
