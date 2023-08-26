@@ -68,7 +68,7 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <searchBar opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dzD-cy-Mud">
+                <searchBar opaque="NO" contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzD-cy-Mud">
                     <rect key="frame" x="0.0" y="92" width="414" height="56"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

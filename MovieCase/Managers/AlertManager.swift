@@ -14,7 +14,7 @@ protocol AlertDelegate: AnyObject {
 class AlertManager {
     weak var delegate: AlertDelegate?
     
-    func showAlert(view: UIViewController, withTitle title: String? = "", withMessage message: String, buttontitle: String? = "") {
+    func showAlert(view: UIViewController, withTitle title: String? = "", withMessage message: String, buttontitle: String? = "Tamam") {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: buttontitle, style: .default, handler: { _ in
             self.delegate?.didPressOk()
