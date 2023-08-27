@@ -27,8 +27,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
         addGesture()
     }
     
-    func willDisplay(poster: String, id: String?) {
-        self.moviePoster.setImage(imgUrl: poster)
+    func willDisplay(poster: String, id: String?, hasImage: Bool) {
+        if hasImage {
+            self.moviePoster.setImage(imgUrl: poster)
+        } else {
+            self.moviePoster.image = Images.Logo.placeholder
+        }
+        
         self.selectedId = id
     }
     

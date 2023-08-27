@@ -28,7 +28,8 @@ class MovieListPresenter: MovieListPresentationLogic {
                 cell.append(
                     .movieList(
                         image: Movie.poster ?? "",
-                        id: Movie.imdbID ?? nil
+                        id: Movie.imdbID ?? nil,
+                        hasImage: Movie.poster != "N/A"
                     )
                 )
             }

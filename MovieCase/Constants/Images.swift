@@ -10,5 +10,6 @@ import UIKit
 struct Images {
     struct Logo {
         static let logo = UIImage(named: "loodos_logo")
+        static let placeholder = UIImage(named: "movie_placeholder")
     }
 }

@@ -110,9 +110,9 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
             break
         case .initalCell:
             break
-        case .movieList(let image, let id):
+        case .movieList(let image, let id, let hasImage):
             guard let cell = cell as? MovieCollectionViewCell else { return }
-            cell.willDisplay(poster: image, id: id)
+            cell.willDisplay(poster: image, id: id, hasImage: hasImage)
             cell.delegate = self
         }
     }
