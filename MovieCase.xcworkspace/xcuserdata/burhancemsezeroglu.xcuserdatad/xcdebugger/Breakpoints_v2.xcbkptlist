@@ -3,4 +3,69 @@
    uuid = "AC1B382A-426E-4757-852E-13FEC51B7074"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8265988-FB4B-45BE-AD75-D2212B7304C0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieCase/AppAndSceneDelegates/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A8265988-FB4B-45BE-AD75-D2212B7304C0 - e3f72a36cf03e0d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieCase.AppDelegate.messaging(_: __C.FIRMessaging, didReceiveRegistrationToken: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MovieCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burhancemsezeroglu/Desktop/MovieCase/MovieCase/AppAndSceneDelegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "A8265988-FB4B-45BE-AD75-D2212B7304C0 - ef345c7d1e0cfd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieCase.AppDelegate.messaging(_: __C.FIRMessaging, didReceiveRegistrationToken: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MovieCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burhancemsezeroglu/Desktop/MovieCase/MovieCase/AppAndSceneDelegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "A8265988-FB4B-45BE-AD75-D2212B7304C0 - e3f72a36cf03e0ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieCase.AppDelegate.messaging(_: __C.FIRMessaging, didReceiveRegistrationToken: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MovieCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/burhancemsezeroglu/Desktop/MovieCase/MovieCase/AppAndSceneDelegates/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
